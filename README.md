@@ -1,7 +1,10 @@
-# js_countdown
-Countdown (javascript)
+# Сountdown (javascript)
 
 Under license: CC-BY-SA
+
+Author:
+Nikita Akimov
+korchiy@yandex.ru
 
 Usage:
 - Copy 2 files to site directory
