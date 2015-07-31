@@ -1,6 +1,6 @@
 //------------------------------------------------------------------------------------------------------------------------------------
 // Countdown
-// Usage:	<script end="2015-07-25 22.00" period=86400000 type="text/javascript" src="countdown.js"></script>
+// Usage: <script end="2015-07-25 22.00" period=86400000 serverScript="http://site_adress/getservertime.php" type="text/javascript" src="countdown.js"></script>
 // 86400000 = 24 hours in ms, for periodic can be used any values
 //------------------------------------------------------------------------------------------------------------------------------------
 var scripts = document.getElementsByTagName('script');
