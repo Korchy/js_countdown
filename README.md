@@ -10,8 +10,8 @@ include into *.html:
 
 Unperiodic countdown:
 
-<script end="2015-07-29 22.00" serverScript="http://site_adress/getservertime.php" type="text/javascript" src="countdown.js"></script>
+&lt;script end=&quot;2015-07-29 22.00&quot; serverScript=&quot;http://site_adress/getservertime.php&quot; type=&quot;text/javascript&quot; src=&quot;countdown.js&quot;&gt;&lt;/script&gt;
 
 Periodic countdown:
 
-<script end="2015-07-29 22.00" period=86400000 serverScript="http://site_adress/getservertime.php" type="text/javascript" src="countdown.js"></script>
+&lt;script end=&quot;2015-07-29 22.00&quot; period=86400000 serverScript=&quot;http://site_adress/getservertime.php&quot; type=&quot;text/javascript&quot; src=&quot;countdown.js&quot;&gt;&lt;/script&gt;
