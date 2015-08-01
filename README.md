@@ -1,5 +1,7 @@
 # Сountdown (javascript)
 
+Javascript countdown with server time.
+
 Under license: CC-BY-SA
 
 Author:
