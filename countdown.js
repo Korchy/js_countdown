@@ -2,6 +2,7 @@
 // Countdown
 // Usage: <script end="2015-07-25 22.00" period=86400000 serverScript="http://site_adress/getservertime.php" type="text/javascript" src="countdown.js"></script>
 // 86400000 = 24 hours in ms, for periodic can be used any values
+// ent time (2015007-25 22.00) is the end time by server side
 //------------------------------------------------------------------------------------------------------------------------------------
 var scripts = document.getElementsByTagName('script');
 var serverScript = scripts[scripts.length-1].getAttribute("serverScript");
@@ -10,17 +11,17 @@ if(scripts[scripts.length-1].getAttribute("period") != null) document.write("per
 document.write("></td></tr></table>");
 if(!xhr) {
 	var xhr = new XMLHttpRequest();
-	xhr.open("POST", serverScript);
+	xhr.open("POST", serverScript+"?cache="+(new Date()).getTime());
 	xhr.onload = function() {
 		var server_time = xhr.responseText;
-		var local_time = (new Date()).getTime();
+		var local_time = (new Date()).getTime()- (new Date()).getTimezoneOffset()*60*1000;
 		var delta = server_time - local_time;
 		setInterval(
 			function(delta) {
 				var countdowns = document.getElementsByName("countdown");
 				for (var i = 0; i < countdowns.length; i++) {
 					var endTime = new Date(countdowns[i].getAttribute("end").replace(/-/g,'/').replace(/\./g,':')).getTime();
-					var currentTime = (new Date()).getTime() + delta;	// current time with server correciton
+					var currentTime = (new Date()).getTime() + delta;	// текущее время с поправкой на сервер
 					if(countdowns[i].getAttribute("period") != null) {
 						var period = Number(countdowns[i].getAttribute("period"));
 						if(period > 0) {
