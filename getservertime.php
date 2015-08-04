@@ -1,5 +1,8 @@
-// returns server time in ms
+// returns server time with timezone offset in ms
 <?php
 list($usec, $sec) = explode(" ", microtime());
-echo round(((float)$usec + (float)$sec)*1000);
+$currentTime = round(((float)$usec + (float)$sec)*1000);
+$now = new DateTime('NOW');
+$currentTime += ($now->getOffset())*1000;
+echo $currentTime;
 ?>
